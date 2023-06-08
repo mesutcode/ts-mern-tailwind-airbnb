@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+:root {
+  font-family: 'Nunito', sans-serif;
+  height: 100%;
+}
+
+/* div {
+  color: #ff385c;
+} */
+/* .logo {
+  color: blue;
+  background-color: blue;
+}
+
+.search {
+  color: brown;
+} */
