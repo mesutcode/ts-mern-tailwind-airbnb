@@ -1,7 +1,19 @@
+import { useState } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
 import Avatar from './Avatar'
+import MenuItem from './MenuItem'
 
 export default function UserMenu() {
+  const [isOpenMenu, setIsOpenMenu] = useState(false)
+
+  const toggleOpenMenuHandler = () => {
+    setIsOpenMenu(() => !isOpenMenu)
+  }
+
+  const menuItemHandler = () => {
+    const item = ''
+  }
+
   return (
     <div className="relative">
       <div
@@ -29,6 +41,7 @@ export default function UserMenu() {
           Airbnb your home
         </div>
         <div
+          onClick={toggleOpenMenuHandler}
           className="
         p-4
         md:py-1
@@ -42,9 +55,7 @@ export default function UserMenu() {
         rounded-full 
         cursor-pointer 
         hover:shadow-md 
-        transition
-        
-          
+        transition    
         "
         >
           <AiOutlineMenu />
@@ -52,6 +63,34 @@ export default function UserMenu() {
             <Avatar />
           </div>
         </div>
+      </div>
+      <div>
+        {isOpenMenu && (
+          <div
+            className="
+          absolute 
+          rounded-xl 
+          shadow-md
+          w-[40vw]
+          md:w-3/4 
+          bg-white 
+          overflow-hidden 
+          right-0 
+          top-12 
+          text-sm
+        "
+          >
+            <div className="flex flex-col cursor-pointer">
+              <MenuItem label="My trips" onClick={menuItemHandler} />
+              <MenuItem
+                onClick={() => {
+                  menuItemHandler
+                }}
+                label="Sign up"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
