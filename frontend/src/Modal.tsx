@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { IoMdClose } from 'react-icons/io'
-import Button from './Button'
+import ModalButton from './ModalButton'
 type ModalProps = {
   isOpen: boolean
+  disabled: boolean
+  actionLabel: string
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, disabled, actionLabel }) => {
   const [showModal, setShowModal] = useState(false)
   useEffect(() => {
     setShowModal(isOpen)
@@ -102,7 +104,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen }) => {
               {/*footer*/}
               <div className="flex flex-col gap-2 p-6">
                 <div className="flex flex-row items-center gap-4 w-full">
-                  <Button />
+                  <ModalButton disabled={disabled} label={actionLabel} />
                 </div>
                 {/* {footer} */}
               </div>

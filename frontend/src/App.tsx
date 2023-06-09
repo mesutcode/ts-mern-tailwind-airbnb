@@ -4,7 +4,7 @@ import Modal from './Modal'
 function App() {
   return (
     <div>
-      <Modal isOpen />
+      <Modal isOpen disabled={false} actionLabel="My Button" />
       <Navbar />
     </div>
   )
